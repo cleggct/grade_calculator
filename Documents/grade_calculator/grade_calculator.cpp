@@ -222,10 +222,15 @@ void grade_calculator::courseChanged(int index){
     if(index == 0){
         ui->midterm1Label->setText("Midterm 1");
         ui->midterm2Label->setText("Midterm 2");
+        ui->schemaButtonB->setEnabled(1);
+        ui->schemaButtonA->setEnabled(1);
     }
     else if(index == 1){
         ui->midterm1Label->setText("Midterm");
         ui->midterm2Label->setText("Project");
+        ui->schemaButtonA->toggle();
+        ui->schemaButtonB->setEnabled(0);
+        ui->schemaButtonA->setEnabled(0);
     }
     emit compute_overall();
 }
