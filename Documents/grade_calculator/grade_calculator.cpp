@@ -12,3 +12,11 @@ grade_calculator::~grade_calculator()
 {
     delete ui;
 }
+
+void grade_calculator::update_overall(int unused){
+    double score = static_cast<double>(unused);
+
+    ui->numberLabel->setText(QString::number(score));
+
+    return;
+}
