@@ -34,7 +34,7 @@ grade_calculator::grade_calculator(QWidget *parent) :
     connect(ui->finalSlider, SIGNAL(valueChanged(int)), this, SLOT(finalSliderChanged(int)));
 
     //connect radio buttons
-    connect(ui->schemaButtonA, SIGNAL(valueChanged(bool)), this, SLOT(schemaChanged(bool)));
+    connect(ui->schemaButtonA, SIGNAL(toggled(bool)), this, SLOT(schemaChanged(bool)));
 
     //connect compute_overall() signa to update_overall
     connect(this, SIGNAL(compute_overall()), this, SLOT(update_overall()));
