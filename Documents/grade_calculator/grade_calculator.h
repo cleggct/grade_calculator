@@ -42,6 +42,8 @@ public slots:
     void midterm2BoxChanged(double);
     void finalSliderChanged(int);
     void finalBoxChanged(double);
+    //slot for the radio buttons
+    void schemaChanged(bool);
 
 
 private:

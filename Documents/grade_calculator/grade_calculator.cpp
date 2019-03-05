@@ -4,7 +4,7 @@
 grade_calculator::grade_calculator(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::grade_calculator),
-    scheme(),
+    scheme(true),
     scores()
 {
     ui->setupUi(this);
@@ -34,6 +34,7 @@ grade_calculator::grade_calculator(QWidget *parent) :
     connect(ui->finalSlider, SIGNAL(valueChanged(int)), this, SLOT(finalSliderChanged(int)));
 
     //connect radio buttons
+    connect(ui->schemaButtonA, SIGNAL(valueChanged(bool)), this, SLOT(schemaChanged(bool)));
 
     //connect compute_overall() signa to update_overall
     connect(this, SIGNAL(compute_overall()), this, SLOT(update_overall()));
@@ -197,5 +198,10 @@ void grade_calculator::finalSliderChanged(int val){
 
 void grade_calculator::finalBoxChanged(double val){
     scores[10] = val;
+    emit compute_overall();
+}
+
+void grade_calculator::schemaChanged(bool val){
+    scheme = val;
     emit compute_overall();
 }
