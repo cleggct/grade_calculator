@@ -9,6 +9,8 @@ grade_calculator::grade_calculator(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setFixedSize(499, 366);
+
     //set up the combo box
     ui->courseBox->addItem("Pic 10B. Intermediate Programming.");
     ui->courseBox->addItem("Pic 10C. Advanced Programming.");
