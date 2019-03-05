@@ -33,6 +33,8 @@ grade_calculator::grade_calculator(QWidget *parent) :
     connect(ui->finalBox, SIGNAL(valueChanged(double)), this, SLOT(finalBoxChanged(double)));
     connect(ui->finalSlider, SIGNAL(valueChanged(int)), this, SLOT(finalSliderChanged(int)));
 
+    //connect radio buttons
+
     //connect compute_overall() signa to update_overall
     connect(this, SIGNAL(compute_overall()), this, SLOT(update_overall()));
 }
@@ -68,9 +70,22 @@ void grade_calculator::update_overall(){
     ui->finalBox->setValue(scores[10]);
     ui->finalSlider->setValue((int)scores[10]);
 
-    double score = static_cast<double>(0.0);
+    double score = 0;
+    double hwavg = 0; //homework average
+    for(size_t i = 0; i < 8; ++i){ //average the homework scores
+        hwavg += scores[i];
+    }
+    hwavg /= 8;
 
-    ui->numberLabel->setText(QString::number(score));
+    if(scheme){ //compute final score
+        score = (0.25 * hwavg) + (0.2 * scores[8]) + (0.2 * scores[9]) + (0.35 * scores[10]);
+    }
+    else {
+        double max = scores[8] > scores[9] ? scores[8] : scores[9]; //get highest midterm score
+        score = (0.25 * hwavg) + (0.3 * max) + (0.44 * scores[10]);
+    }
+
+    ui->numberLabel->setText(QString::number(score)); //set score label to the computed score
 
     return;
 }
