@@ -19,7 +19,7 @@ signals:
     void compute_overall(); //tells us when to compute the score
 
 public slots:
-    void update_overall(int); //update the score
+    void update_overall(); //update the score
     void hw1SliderChanged(int); //if the slider moves, change the number in the corresponding box
     void hw1BoxChanged(double); //if the number in the box changes, move the slider
     void hw2SliderChanged(int);
@@ -36,6 +36,12 @@ public slots:
     void hw7BoxChanged(double);
     void hw8SliderChanged(int);
     void hw8BoxChanged(double);
+    void midterm1SliderChanged(int);
+    void midterm1BoxChanged(double);
+    void midterm2SliderChanged(int);
+    void midterm2BoxChanged(double);
+    void finalSliderChanged(int);
+    void finalBoxChanged(double);
 
 
 private:

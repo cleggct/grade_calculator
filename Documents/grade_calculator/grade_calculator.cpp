@@ -26,6 +26,15 @@ grade_calculator::grade_calculator(QWidget *parent) :
     connect(ui->hw7Slider, SIGNAL(valueChanged(int)), this, SLOT(hw7SliderChanged(int)));
     connect(ui->hw8Box, SIGNAL(valueChanged(double)), this, SLOT(hw8BoxChanged(double)));
     connect(ui->hw8Slider, SIGNAL(valueChanged(int)), this, SLOT(hw8SliderChanged(int)));
+    connect(ui->midterm1Box, SIGNAL(valueChanged(double)), this, SLOT(midterm1BoxChanged(double)));
+    connect(ui->midterm1Slider, SIGNAL(valueChanged(int)), this, SLOT(midterm1SliderChanged(int)));
+    connect(ui->midterm2Box, SIGNAL(valueChanged(double)), this, SLOT(midterm2BoxChanged(double)));
+    connect(ui->midterm2Slider, SIGNAL(valueChanged(int)), this, SLOT(midterm2SliderChanged(int)));
+    connect(ui->finalBox, SIGNAL(valueChanged(double)), this, SLOT(finalBoxChanged(double)));
+    connect(ui->finalSlider, SIGNAL(valueChanged(int)), this, SLOT(finalSliderChanged(int)));
+
+    //connect compute_overall() signa to update_overall
+    connect(this, SIGNAL(compute_overall()), this, SLOT(update_overall()));
 }
 
 grade_calculator::~grade_calculator()
@@ -33,8 +42,33 @@ grade_calculator::~grade_calculator()
     delete ui;
 }
 
-void grade_calculator::update_overall(int unused){
-    double score = static_cast<double>(unused);
+void grade_calculator::update_overall(){
+
+    //make sliders and boxes change according to score value
+    ui->hw1Box->setValue(scores[0]);
+    ui->hw1Slider->setValue((int)scores[0]);
+    ui->hw2Box->setValue(scores[1]);
+    ui->hw2Slider->setValue((int)scores[1]);
+    ui->hw3Box->setValue(scores[2]);
+    ui->hw3Slider->setValue((int)scores[2]);
+    ui->hw4Box->setValue(scores[3]);
+    ui->hw4Slider->setValue((int)scores[3]);
+    ui->hw5Box->setValue(scores[4]);
+    ui->hw5Slider->setValue((int)scores[4]);
+    ui->hw6Box->setValue(scores[5]);
+    ui->hw6Slider->setValue((int)scores[5]);
+    ui->hw7Box->setValue(scores[6]);
+    ui->hw7Slider->setValue((int)scores[6]);
+    ui->hw8Box->setValue(scores[7]);
+    ui->hw8Slider->setValue((int)scores[7]);
+    ui->midterm1Box->setValue(scores[8]);
+    ui->midterm1Slider->setValue((int)scores[8]);
+    ui->midterm2Box->setValue(scores[9]);
+    ui->midterm2Slider->setValue((int)scores[9]);
+    ui->finalBox->setValue(scores[10]);
+    ui->finalSlider->setValue((int)scores[10]);
+
+    double score = static_cast<double>(0.0);
 
     ui->numberLabel->setText(QString::number(score));
 
@@ -118,5 +152,35 @@ void grade_calculator::hw8SliderChanged(int val){
 
 void grade_calculator::hw8BoxChanged(double val){
     scores[7] = val;
+    emit compute_overall();
+}
+
+void grade_calculator::midterm1SliderChanged(int val){
+    scores[8] = (double) val;
+    emit compute_overall();
+}
+
+void grade_calculator::midterm1BoxChanged(double val){
+    scores[8] = val;
+    emit compute_overall();
+}
+
+void grade_calculator::midterm2SliderChanged(int val){
+    scores[9] = (double) val;
+    emit compute_overall();
+}
+
+void grade_calculator::midterm2BoxChanged(double val){
+    scores[9] = val;
+    emit compute_overall();
+}
+
+void grade_calculator::finalSliderChanged(int val){
+    scores[10] = (double) val;
+    emit compute_overall();
+}
+
+void grade_calculator::finalBoxChanged(double val){
+    scores[10] = val;
     emit compute_overall();
 }
