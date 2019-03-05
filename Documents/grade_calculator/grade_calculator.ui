@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>grade_calculator</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -22,7 +22,7 @@
      <height>317</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
+   <layout class="QVBoxLayout" name="mainLayout">
     <item>
      <layout class="QHBoxLayout" name="courseBar">
       <item>
@@ -55,9 +55,9 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <layout class="QHBoxLayout" name="centerLayout">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="hwLayout">
         <item>
          <layout class="QHBoxLayout" name="hw1Bar">
           <item>
@@ -242,7 +242,7 @@
        </spacer>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <layout class="QVBoxLayout" name="testLayout">
         <item>
          <layout class="QVBoxLayout" name="midterm1Layout">
           <item>
@@ -344,7 +344,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <layout class="QHBoxLayout" name="scoreBar">
       <item>
        <widget class="QLabel" name="scoreLabel">
         <property name="text">

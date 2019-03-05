@@ -16,13 +16,32 @@ public:
     ~grade_calculator();
 
 signals:
-    void compute_overall();
+    void compute_overall(); //tells us when to compute the score
 
 public slots:
-    void update_overall(int);
+    void update_overall(int); //update the score
+    void hw1SliderChanged(int); //if the slider moves, change the number in the corresponding box
+    void hw1BoxChanged(double); //if the number in the box changes, move the slider
+    void hw2SliderChanged(int);
+    void hw2BoxChanged(double);
+    void hw3SliderChanged(int);
+    void hw3BoxChanged(double);
+    void hw4SliderChanged(int);
+    void hw4BoxChanged(double);
+    void hw5SliderChanged(int);
+    void hw5BoxChanged(double);
+    void hw6SliderChanged(int);
+    void hw6BoxChanged(double);
+    void hw7SliderChanged(int);
+    void hw7BoxChanged(double);
+    void hw8SliderChanged(int);
+    void hw8BoxChanged(double);
+
 
 private:
     Ui::grade_calculator *ui;
+    bool scheme; //T for A, F for B
+    double scores [11]; //homework and test scores
 };
 
 #endif // GRADE_CALCULATOR_H
