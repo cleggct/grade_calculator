@@ -44,6 +44,8 @@ public slots:
     void finalBoxChanged(double);
     //slot for the radio buttons
     void schemaChanged(bool);
+    //slot for changing class
+    void courseChanged(int);
 
 
 private:

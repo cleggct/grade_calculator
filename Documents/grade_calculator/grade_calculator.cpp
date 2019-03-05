@@ -9,6 +9,10 @@ grade_calculator::grade_calculator(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //set up the combo box
+    ui->courseBox->addItem("Pic 10B. Intermediate Programming.");
+    ui->courseBox->addItem("Pic 10C. Advanced Programming.");
+
     //connect the sliders and spinners
     connect(ui->hw1Box, SIGNAL(valueChanged(double)), this, SLOT(hw1BoxChanged(double)));
     connect(ui->hw1Slider, SIGNAL(valueChanged(int)), this, SLOT(hw1SliderChanged(int)));
@@ -36,8 +40,11 @@ grade_calculator::grade_calculator(QWidget *parent) :
     //connect radio buttons
     connect(ui->schemaButtonA, SIGNAL(toggled(bool)), this, SLOT(schemaChanged(bool)));
 
-    //connect compute_overall() signa to update_overall
+    //connect compute_overall() signal to update_overall
     connect(this, SIGNAL(compute_overall()), this, SLOT(update_overall()));
+
+    //connect combobox to the combobox slot
+    connect(ui->courseBox, SIGNAL(activated(int)), this, SLOT(courseChanged(int)));
 }
 
 grade_calculator::~grade_calculator()
@@ -203,5 +210,20 @@ void grade_calculator::finalBoxChanged(double val){
 
 void grade_calculator::schemaChanged(bool val){
     scheme = val;
+    emit compute_overall();
+}
+
+void grade_calculator::courseChanged(int index){
+    for(size_t i = 0; i < 11; ++i){
+        scores[i] = 0;
+    }
+    if(index == 0){
+        ui->midterm1Label->setText("Midterm 1");
+        ui->midterm2Label->setText("Midterm 2");
+    }
+    else if(index == 1){
+        ui->midterm1Label->setText("Midterm");
+        ui->midterm2Label->setText("Project");
+    }
     emit compute_overall();
 }
