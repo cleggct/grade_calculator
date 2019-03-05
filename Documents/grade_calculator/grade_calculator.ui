@@ -1,20 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>grade_calculator</class>
- <widget class="QWidget" name="grade_calculator" >
-  <property name="geometry" >
+ <widget class="QWidget" name="grade_calculator">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>499</width>
+    <height>366</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>grade_calculator</string>
   </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>20</y>
+     <width>378</width>
+     <height>317</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <layout class="QHBoxLayout" name="courseBar">
+      <item>
+       <widget class="QLabel" name="courseLabel">
+        <property name="text">
+         <string>Course:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QComboBox" name="courseBox">
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="hw1Bar">
+          <item>
+           <widget class="QLabel" name="hw1Label">
+            <property name="text">
+             <string>HW 1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw1Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw1Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw2Bar">
+          <item>
+           <widget class="QLabel" name="hw2Label">
+            <property name="text">
+             <string>HW 2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw2Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw2Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw3Bar">
+          <item>
+           <widget class="QLabel" name="hw3Label">
+            <property name="text">
+             <string>HW 3</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw3Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw3Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw4Bar">
+          <item>
+           <widget class="QLabel" name="hw4Label">
+            <property name="text">
+             <string>HW 4</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw4Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw4Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw5Bar">
+          <item>
+           <widget class="QLabel" name="hw5Label">
+            <property name="text">
+             <string>HW 5</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw5Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw5Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw6Bar">
+          <item>
+           <widget class="QLabel" name="hw6Label">
+            <property name="text">
+             <string>HW 6</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw6Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw6Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw7Bar">
+          <item>
+           <widget class="QLabel" name="hw7Label">
+            <property name="text">
+             <string>HW 7</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw7Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw7Box"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hw8Bar">
+          <item>
+           <widget class="QLabel" name="hw8Label">
+            <property name="text">
+             <string>HW 8</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="hw8Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="hw8Box"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="midterm1Layout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="midterm1Label">
+              <property name="text">
+               <string>Midterm 1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="midterm1Box"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QSlider" name="midterm1Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="midterm2Layout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="midterm2Label">
+              <property name="text">
+               <string>Midterm 2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="midterm2Box"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QSlider" name="midterm2Slider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="finalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="finalLabel">
+              <property name="text">
+               <string>Final</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="finalBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QSlider" name="finalSlider">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="schemaButtonLayout">
+          <item>
+           <widget class="QRadioButton" name="schemaButtonA">
+            <property name="text">
+             <string>Schema A</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="schemaButtonB">
+            <property name="text">
+             <string>Schema B</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="scoreLabel">
+        <property name="text">
+         <string>Class Score:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="numberLabel">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
